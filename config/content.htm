@@ -29,7 +29,7 @@
 <p>"C:\Program Files\7-Zip\7z" x C:\Users\%USERNAME%\Downloads\python_2025_lite.7z -oC:\ -y</p>
 <p>在隨身碟中任意位置以任意檔名儲存為bat檔(例：download.bat)</p>
 <p>之後每次打開電腦之後都可以點擊這個執行檔<span>讓可攜程式環境以電腦的速度執行</span></p>
-<p><strong>2.Creating the basics 資料整理：</strong></p>
+<p><strong>2.Creating the basics 資料整理</strong></p>
 <p>啟動可攜程式系統後, 在命令列中:</p>
 <p>y:\&gt;cd notebook</p>
 <p>y:\notebook&gt;jupyter lab --collaborative</p>
@@ -37,16 +37,29 @@
 <p><strong>3.學習python語法："string"、input和print</strong></p>
 <p>例：sum = 'Hello'<br/>name = input ("your name")<br/>sum1 = (sum+name)<br/>print(sum1)</p>
 <p>w4:</p>
-<p>1.學習print的用法</p>
+<p></p>
+<p><strong>1.學習print的用法</strong></p>
 <p>例：#單行註解<br/>#help(print)<br/>'''這個三引號所界定的區域被 Python 視為多行註解'''</p>
 <p>a = "一個字串"<br/>print(a, a, a, sep='*', end='')</p>
-<p>sep是間隔，end是回傳</p>
+<p>print(a)</p>
+<p>sep是每個逗點分隔開的間隔所插入的符號，end是指輸出完字串後產生的字符，預設是\n(換行符號)</p>
+<p>如上述例子中end=''就是第一串print輸出後什麼字符都不產生，直接將第二串print加在後方</p>
+<p>再舉個例子：</p>
+<p><span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello"</span>, end=<span class="hljs-string">''</span>)</p>
+<p><span class="hljs-built_in">print</span>(<span class="hljs-string">" World"</span>)</p>
+<p>這樣就會輸出Hello World</p>
 <p>使用方式：在SciTE中輸入完後點選Too1s當中的Go，點clear output可以清空輸出</p>
 <p>點選View當中的Line Numbers可以顯示行數</p>
-<p>2.學習range的用法</p>
+<p></p>
+<p><strong>2.學習range的用法</strong></p>
 <p>例：#help(range)<br/>for i in range(1, 6, 2):<br/>前兩個數字是範圍，若輸入1和6則會輸出1到5，第三個數字代表每隔幾個數字輸出一次</p>
 <p>如範例這樣輸入的話，就會輸出1,3,5</p>
 <p>如果只輸入一個數字的話就會輸出0到輸入的數字，例：range(5)就會輸出0到5</p>
+<p><strong>3.練習列印星號金字塔</strong></p>
+<p>a = 5 <br/>b = a * 2 <br/>for i in range(a):<br/> spaces = b - (2 * i + 1) <br/> print(' ' * (spaces//2), end='') <br/> print('*' * (2 * i + 1))  </p>
+<p>在SciTE中執行時歪了，所以嘗試在cmd中執行</p>
+<p>先把儲存的.py檔案丟到data/tmp/python_ex</p>
+<p>然後開啟cmd，cd到python_ex之後執行python 檔名</p>
 <p></p>
 <p>出席 (10%) - 自行舉證評分</p>
 <p>自行利用 Github commits 提交記錄評分.</p><h1>HW 1</h1>
