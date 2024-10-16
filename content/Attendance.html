@@ -212,6 +212,24 @@ print('*' * (2 * i + 1))  </pre>
 <p>在SciTE中執行時歪了，所以嘗試在cmd中執行</p>
 <p>先把儲存的.py檔案丟到data/tmp/python_ex</p>
 <p>然後開啟cmd，cd到python_ex之後執行python 檔名</p>
+<p><strong></strong></p>
+<p><strong>w6:學習使用 Python 控制 CoppeliaSim</strong></p>
+<p>操作步驟:</p>
+<ol>
+<li>下載 <a href="http://229.cycu.org/python_2025_lite.7z">python_2025_lite.7z</a> (可攜程式環境)</li>
+<li>下載<span> </span><a href="https://mde.tw/cp2024/downloads/zmq_remote_api_ex_cube_triangle.7z">zmq_remote_api_ex_cube_triangle.7z</a> (利用 Python 控制模擬場景中的物件)</li>
+<li>進入可攜程式環境中 data/CoppeliaSim 目錄, 開啟 coppeliaSim.exe (機電整合模擬程式,<span> </span><a href="https://github.com/CoppeliaRobotics">原始碼</a>)</li>
+<li>啟動可攜程式環境, 雙點擊 start_ipv6.bat, 系統會啟動四個命令列, 兩個 SciTE 編輯器</li>
+<li>執行場景控制程式前, 先處理操作系統的防火牆, 將下列指令存為 .bat 檔案後, 以管理員身分執行, 以便開啟 23000-23050 埠號進出:</li>
+<li>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">netsh advfirewall firewall add rule name="allow_23000-23050" dir=in action=allow protocol=TCP localport=23000-23050
+netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allow protocol=TCP localport=23000-23050</pre>
+</li>
+<li>開啟 CoppeliaSim 中的視覺串流伺服器: Modules - Connectivity - Visualization stream</li>
+<li>利用 SciTE 開啟 put_cubes_into_scene_1.py, 利用 Tools - Go 執行操控程式</li>
+<li>使用者可以透過瀏覽器, 以模擬場景所在電腦的 IP, 且埠號為 23020 觀看模擬場景，在網頁輸入localhost:23020就可以進入，其他人也可以將localhost改為該電腦IP進入其模擬場景，例：該電腦IP為<span>120.113.99.8，網址輸入120.113.99.8:23020即可進行連線</span></li>
+<li><span>搜尋電腦IP位址的方式：在cmd中輸入ipconfig /all，找到IPv4位址</span></li>
+</ol>
 <p>出席 (10%) - 自行舉證評分</p>
 <p>自行利用 Github commits 提交記錄評分.</p><br />About << <a href='About.html'>Previous</a> <a href='HW 1.html'>Next</a> >> HW 1</div>
         
