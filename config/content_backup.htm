@@ -94,7 +94,10 @@ print('*' * (2 * i + 1))  </pre>
 <li>進入可攜程式環境中 data/CoppeliaSim 目錄, 開啟 coppeliaSim.exe (機電整合模擬程式,<span> </span><a href="https://github.com/CoppeliaRobotics">原始碼</a>)</li>
 <li>啟動可攜程式環境, 雙點擊 start_ipv6.bat, 系統會啟動四個命令列, 兩個 SciTE 編輯器</li>
 <li>執行場景控制程式前, 先處理操作系統的防火牆, 將下列指令存為 .bat 檔案後, 以管理員身分執行, 以便開啟 23000-23050 埠號進出:</li>
-<li>netsh advfirewall firewall add rule name="allow_23000-23050" dir=in action=allow protocol=TCP localport=23000-23050<br/>netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allow protocol=TCP localport=23000-23050</li>
+<li>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">netsh advfirewall firewall add rule name="allow_23000-23050" dir=in action=allow protocol=TCP localport=23000-23050
+netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allow protocol=TCP localport=23000-23050</pre>
+</li>
 <li>開啟 CoppeliaSim 中的視覺串流伺服器: Modules - Connectivity - Visualization stream</li>
 <li>利用 SciTE 開啟 put_cubes_into_scene_1.py, 利用 Tools - Go 執行操控程式</li>
 <li>使用者可以透過瀏覽器, 以模擬場景所在電腦的 IP, 且埠號為 23020 觀看模擬場景，在網頁輸入localhost:23020就可以進入，其他人也可以將localhost改為該電腦IP進入其模擬場景，例：該電腦IP為<span>120.113.99.8，網址輸入120.113.99.8:23020即可進行連線</span></li>
