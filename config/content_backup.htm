@@ -119,10 +119,16 @@ netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allo
 <p>啟動可攜程式環境, 雙點擊 start_ipv6.bat, 系統會啟動四個命令列, 兩個 SciTE 編輯器</p>
 <p>接著到自己的倉儲中點擊code，將HTTPS中的網址複製下來，然後回到命令列中</p>
 <p>先利用cd tmp移動到tmp的目錄中，輸入接著輸入：</p>
-<p>git clone 複製的網址 想儲存的近端名稱</p>
-<p>就可以將倉儲克隆到近端，例：假設用我的倉儲，儲存的名稱為cp2024</p>
+<p>git clone 複製的網址 想儲存的近端名稱，就可以將倉儲克隆到近端</p>
+<p>例：假設用我的倉儲，儲存的名稱為cp2024</p>
 <p>就輸入git clone<span> </span>https://github.com/mdecp2024/hw-41023137.git cp2024</p>
 <p>然後按enter執行，就能將倉儲以cp2024的名稱儲存在tmp的目錄下</p>
+<p>接著打開github帳號，進到Settings/Developer Settings/Personal access tokens (classic)\Tokens (classic)</p>
+<p>點擊Generate new token (classic)，在Note欄位輸入建立的Token名稱，並將expiration(截止時間)設為no expiration，這樣token就不會過期，過期的token需要重新設定，最後按下Generate token產生代碼，然後複製下來</p>
+<p>接下來用SciTE打開python_2025_lite\data\tmp\cp2024\.git中的config，將剛剛複製的Token代碼貼到url的github.com前面再加一個@，變成https://Token代碼@github.com/mdecp2024/hw-41023137.git，儲存</p>
+<p>之後就可以透過近端進行倉儲維護，透過命令列cd到tmp的cp2024，然後輸入cms按enter執行</p>
+<p>將系統回傳的網址貼到瀏覽器上就可以開啟近端進行維護，修改並轉靜態完畢後就在命令列輸入以下指令：</p>
+<p>acp "儲存的名稱" 就能夠以儲存的名稱推到倉儲上修改網頁內容</p>
 <p>出席 (10%) - 自行舉證評分</p>
 <p>自行利用 Github commits 提交記錄評分.</p><h1>HW 1</h1>
 <h4>主題: 基於瀏覽器的分散式版次管理與整合程式開發環境 (10%)<span style="background-color: #ffff99;"><br/></span></h4>
