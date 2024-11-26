@@ -186,7 +186,7 @@ netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allo
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/BvpzHPK3lRU?si=OBgifyvFq1Vu5L5f" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/q1F8LC7AKyU?si=OPB6RADWqZQnCThQ" title="YouTube video player" width="560"></iframe></p>
 <h3>w11</h3>
-<p></p>
+<p><a href="https://mdecp2024.github.io/hw-41023137/content/Brython?src=https://gist.githubusercontent.com/41023137/c888c3d3322ded89098872429fa2d263/raw/d8f3203f99fea54514a2421f0fba724226f16e72/w11_hw_1">第一題</a></p>
 <p>1.<span> </span><strong>匯入模組</strong></p>
 <div>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math</pre>
@@ -241,6 +241,77 @@ cx, cy = 4.5, 4.5</pre>
 </div>
 <div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">
 <div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">完成一行後，透過這行程式碼換行，準備打印下一行。</div>
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none"></div>
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none"></div>
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none"><a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/9f4a66134f4291d7b407a9aa93d8848d/raw/2867209bd515d8c9dafec173517b2e5f256b86c8/%25E7%2594%25A8%25E6%25A0%25BC%25E5%25AD%2590%25E5%25A1%25AB%25E6%25BB%25BF%25E5%259C%2593%25E5%25BD%25A2%25E5%259C%2596%25E6%25A1%2588"> <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/6TXAashuoh4?si=vH4Ca7JeVAPifFLH" title="YouTube video player" width="560"></iframe></a></div>
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none"></div>
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none"><a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/9f4a66134f4291d7b407a9aa93d8848d/raw/2867209bd515d8c9dafec173517b2e5f256b86c8/%25E7%2594%25A8%25E6%25A0%25BC%25E5%25AD%2590%25E5%25A1%25AB%25E6%25BB%25BF%25E5%259C%2593%25E5%25BD%25A2%25E5%259C%2596%25E6%25A1%2588">第二題</a></div>
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none"></div>
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none"><span>1.</span><span> </span><strong>匯入模組</strong></div>
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+</pre>
+<p>html 模組，用來建立和操作 HTML 元素。<br/>document 物件，用來操作 DOM（Document Object Model），將 &lt;canvas&gt; 添加到網頁。<br/>math模組，提供數學函式，這裡用於計算格子中心與圓心的距離。<br/><br/></p>
+<p>2.<b>建立 <code>&lt;canvas&gt;</code> 物件</b></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+</pre>
+<p>建立一個 <code>&lt;canvas&gt;</code> 元素，設定寬和高為 400 像素，作為繪圖的畫布。</p>
+<p>在 HTML 文件中尋找 <code>brython_div1</code> 的元素，並將<span face="monospace" style="font-family: monospace;">畫布</span>插入到 <code>brython_div1</code></p>
+<p><span face="monospace" style="font-family: monospace;">3.<strong>設定格子像素大小</strong></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">gs = 20
+</pre>
+<p>定義每個格子的邊長為 20 像素</p>
+<p>4.<strong>取得繪圖上下文</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">ctx = canvas.getContext("2d")
+</pre>
+<p>取得 <code>&lt;canvas&gt;</code> 的 2D 繪圖上下文，之後使用它來繪製格子、填充顏色等操作。</p>
+<p>5.<strong>繪製單個矩形</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+</pre>
+<p>定義函式 dRect，用於繪製矩形的邊框。<br/>參數：<br/>lux, luy: 矩形左上角的座標。<br/>w, h: 矩形的寬和高。<br/>s: 線條的寬度<br/>c: 線條顏色<br/>設定矩形邊框的線條寬度。<br/>設定矩形邊框的顏色。<br/>開始繪製新的路徑，確保不會與前面的路徑混淆。<br/>在 (lux, luy) 座標位置繪製一個寬 w、高 h 的矩形。<br/>繪製矩形的邊框。</p>
+<p>6.<strong>繪製整個格子網格</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def grid(width, height, grid_pix):
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+</pre>
+<p>定義函式 grid，用於繪製多個矩形構成的網格。<br/>參數：<br/>width, height: 網格的行數和列數。<br/>grid_pix: 每個格子的邊長（像素大小）。<br/>計算每個格子的座標，並繪製淺灰色的矩形作為網格。</p>
+<p>7.<strong>填充顏色</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def fill(x, y, color):
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, gs, gs)
+</pre>
+<p>定義函式 fill，用於填充指定位置的格子。<br/>參數：<br/>x, y: 填充的矩形左上角座標。<br/>color: 填充顏色。<br/>設定填充的顏色。<br/>在 (x, y) 座標繪製寬高為 gs 的矩形，填充顏色。</p>
+<p>8.<strong>繪製圓形內部</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def draw_circle(grid_size, circle_radius, grid_pix, center):
+    cx, cy = center
+    for i in range(grid_size):
+        for j in range(grid_size):
+            grid_center_x = i + 0.5
+            grid_center_y = j + 0.5
+            distance = math.sqrt((grid_center_x - cx)**2 + (grid_center_y - cy)**2)
+            if distance &lt;= circle_radius:
+                fill(i * grid_pix + 1, j * grid_pix + 1, "black")
+</pre>
+<p>定義函式 draw_circle，用於計算圓形的格子範圍並填色。<br/>參數：<br/>grid_size: 格子網的邊長。<br/>circle_radius: 圓的半徑（單位為格子數）。<br/>grid_pix: 每格的邊長像素。<br/>center: 圓心座標（以格子數計算）。</p>
+<p>計算每個格子的中心座標。<br/>使用距離公式，計算格子中心與圓心的距離。<br/>判斷該格子是否位於圓形內部或邊界。<br/>若條件成立，將該格子填充黑色。</p>
+<p>9.<strong>執行主程式</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">grid(10, 10, gs)
+draw_circle(10, 5, gs, (5, 5))
+</pre>
+<p>繪製 10×10 的網格，每格邊長為 20 像素。<br/>繪製一個圓心在網格 (5, 5)、半徑為 5 格的實心圓形。</p>
+<p></p>
+<p><em><strong>心得</strong>：這次的作業主要是透過chatgpt進行程式碼的編寫及解釋，先將題目交給它之後檢查回應的程式碼是否符合要求，然後確認沒問題之後再詢問每行程式碼的意義。過程中也有遇到一些跟蠻特別的狀況，像是第一題就有回應的程式碼輸出的圖形十分橢圓，還有第二題輸出的圖形中間是空心的。在遇到問題的同時，我也參考了其他同學的程式碼逐行進行比對，最後也成功找出原因並將問題逐步改善。</em></p>
+</div>
 </div><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
