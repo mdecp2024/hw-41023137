@@ -155,7 +155,8 @@ netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allo
 <p>教學：<a href="https://mde.tw/cp2024/content/Exam1.html">https://mde.tw/cp2024/content/Exam1.html</a> </p>
 <p>w11_hw：<a href="https://mde.tw/cp2024/content/w11_hw.html">https://mde.tw/cp2024/content/w11_hw.html</a> </p>
 <p>出席 (10%) - 自行舉證評分</p>
-<p>自行利用 Github commits 提交記錄評分.</p><h1>HW 1</h1>
+<p>自行利用 Github commits 提交記錄評分.</p>
+<h1>HW 1</h1>
 <h4>主題: 基於瀏覽器的分散式版次管理與整合程式開發環境 (10%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">USB 隨身碟:</p>
 <p style="padding-left: 60px;">下載 <a href="http://229.cycu.org/python_2025_lite.7z">python_2025_lite.7z</a> (428 MB, 解開壓縮後約 1.5 GB)</p>
@@ -183,7 +184,64 @@ netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allo
 <h3>w10</h3>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/5sS6A_fOc-0?si=iQ8L2DxrRznkqFdL" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/BvpzHPK3lRU?si=OBgifyvFq1Vu5L5f" title="YouTube video player" width="560"></iframe></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/q1F8LC7AKyU?si=OPB6RADWqZQnCThQ" title="YouTube video player" width="560"></iframe></p><h1>HW 2</h1>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/q1F8LC7AKyU?si=OPB6RADWqZQnCThQ" title="YouTube video player" width="560"></iframe></p>
+<h3>w11</h3>
+<p></p>
+<p>1.<span> </span><strong>匯入模組</strong></p>
+<div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math</pre>
+</div>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none"><code>math</code><span> </span>是 Python 的數學模組，用來執行數學相關的計算。</div>
+</div>
+<p><br/>2.<span> </span><strong>定義半徑和圓心</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">r = 5
+
+cx, cy = 4.5, 4.5</pre>
+<div></div>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"></div>
+<p><code>r</code>是圓的半徑</p>
+<p><code>cx, cy</code><span> </span>是圓心的座標</p>
+<p><br/>3.<span> for</span><strong>迴圈：產生區域</strong></p>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">
+<div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for y in range(10):
+    for x in range(10):</pre>
+</div>
+產生一個範圍為10x10 的區域</div>
+</div>
+<p></p>
+<p><br/>4.<span> </span><strong>計算與圓心的距離</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">distance = math.sqrt((x - cx) ** 2 + (y - cy) ** 2)</pre>
+<div>
+<div class="syntaxhighlighter html" id="highlighter_110011"></div>
+</div>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">每個點<span> </span><code>(x, y)</code><span> </span>到圓心<span> </span><code>(cx, cy)</code><span> </span>的距離使用公式計算：<span class="katex-display"><span class="katex"><span class="katex-mathml"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>距離</mtext><mo>=</mo><msqrt><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−cx</mo><mtext><br/></mtext><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi>y</mi><mo>−cy</mo><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></msqrt></mrow></semantics></math></span></span></span></div>
+</div>
+<p>將這個點的座標代入後，距離會決定該點是否屬於圓內。</p>
+<p></p>
+<p><br/>5.<span> </span><strong>判斷並繪製圖案</strong></p>
+<div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if distance &lt;= r:
+            print(' * ', end='')
+        else:
+            print('   ', end='')</pre>
+</div>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">如果距離<span> </span><code>distance</code><span> </span>小於或等於圓的半徑<span> </span><code>r</code>，表示該點在圓內，則打印<span> </span><code>" * "</code>。</div>
+</div>
+<p>否則打印空白<span> </span><code>" "</code>，代表圓外的區域。</p>
+<p><code>end=""</code><span> 可以</span>確保在打印完每一個<span>*之後不會換行，因為預設的<code>end="/n"</code> 會讓打印完之後自動換行</span>。</p>
+<p></p>
+<p><br/>6.<span> </span><strong>換行</strong></p>
+<div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> print()  </pre>
+</div>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">
+<div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">完成一行後，透過這行程式碼換行，準備打印下一行。</div>
+</div><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
