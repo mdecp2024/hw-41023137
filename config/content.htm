@@ -342,7 +342,8 @@ draw_circle(10, 5, gs, (5, 5))
 <div id="brython_div1"></div>
 <!-- 導入 brython 程式庫 -->
 <p>
-<script src="/static/brython.js"></script>
+<script src="/static/brython.js">
+</script>
 <script src="/static/brython_stdlib.js"></script>
 </p>
 <!-- 啟動 Brython -->
@@ -377,6 +378,221 @@ ctx.beginPath()
 ctx.moveTo(10, 10)
 ctx.lineTo(210, 210)
 ctx.stroke()
+</script>
+</p>
+<p></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js">
+</script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+
+# 建立 canvas 並加入網頁
+canvas = html.CANVAS(width=800, height=800)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+# 取得 2D 繪圖上下文
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+
+# 定義第一個矩形的參數
+rect1_x = 100
+rect1_y = 100
+rect1_width = 200
+rect1_height = 200
+
+# 定義第二個矩形的參數
+rect2_x = 200
+rect2_y = 200
+rect2_width = 200
+rect2_height = 200
+
+# 繪製第一個矩形和外切圓
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.rect(rect1_x, rect1_y, rect1_width, rect1_height)
+ctx.stroke()
+
+ctx.strokeStyle = 'blue' 
+ctx.beginPath() 
+ctx.moveTo(100, 100)
+ctx.lineTo(300, 300)
+ctx.stroke()
+
+# 計算第一個矩形的外切圓參數
+rect1_centerX = rect1_x + rect1_width / 2
+rect1_centerY = rect1_y + rect1_height / 2
+rect1_radius = math.sqrt((rect1_width / 2) ** 2 + (rect1_height / 2) ** 2)
+
+# 繪製第一個矩形的外切圓
+ctx.beginPath()
+ctx.arc(rect1_centerX, rect1_centerY, rect1_radius, 0, math.pi * 2)
+ctx.strokeStyle = 'black'
+ctx.stroke()
+
+# 繪製第二個矩形和外切圓
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.rect(rect2_x, rect2_y, rect2_width, rect2_height)
+ctx.stroke()
+
+# 計算第二個矩形的外切圓參數
+rect2_centerX = rect2_x + rect2_width / 2
+rect2_centerY = rect2_y + rect2_height / 2
+rect2_radius = math.sqrt((rect2_width / 2) ** 2 + (rect2_height / 2) ** 2)
+
+# 繪製第二個矩形的外切圓
+ctx.beginPath()
+ctx.arc(rect2_centerX, rect2_centerY, rect2_radius, 0, math.pi * 2)
+ctx.strokeStyle = 'black'
+ctx.stroke()
+</script>
+</p>
+<p></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js">
+</script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+
+grid_size = 1
+point_size = max(int(grid_size/2), 1)
+ctx.lineWidth = 1
+
+# 1. 繪製兩個圓 (黑色)
+ctx.strokeStyle = 'black'  # 設定圓的顏色為黑色
+
+# 第一個圓參數
+circle1_center_x = 200
+circle1_center_y = 200
+circle1_radius = 141.4
+
+# 繪製第一個圓
+ctx.beginPath()
+ctx.arc(circle1_center_x, circle1_center_y, circle1_radius, 0, 2 * math.pi)
+ctx.stroke()
+
+# 第二個圓參數
+circle2_center_x = 300
+circle2_center_y = 300
+circle2_radius = 141.4
+
+# 繪製第二個圓
+ctx.beginPath()
+ctx.arc(circle2_center_x, circle2_center_y, circle2_radius, 0, 2 * math.pi)
+ctx.stroke()
+
+# 2. 計算內接方形的邊長
+square1_side = circle1_radius * math.sqrt(2)  # 內接方形的邊長
+square2_side = circle2_radius * math.sqrt(2)  # 內接方形的邊長
+
+# 3. 繪製內接方形
+ctx.strokeStyle = 'red'
+
+# 第一個方形 (內接於圓1)
+rect1_x = circle1_center_x - square1_side / 2  # 左上角 x
+rect1_y = circle1_center_y - square1_side / 2  # 左上角 y
+ctx.beginPath()
+ctx.rect(rect1_x, rect1_y, square1_side, square1_side)
+ctx.stroke()
+
+# 第二個方形 (內接於圓2)
+rect2_x = circle2_center_x - square2_side / 2  # 左上角 x
+rect2_y = circle2_center_y - square2_side / 2  # 左上角 y
+ctx.beginPath()
+ctx.rect(rect2_x, rect2_y, square2_side, square2_side)
+ctx.stroke()
+
+# 定義判定函式
+def point_in_circle1(x, y):
+    cx, cy, r = circle1_center_x, circle1_center_y, circle1_radius
+    return (x - cx)**2 + (y - cy)**2 < r**2
+
+def point_in_square1(x, y):
+    return rect1_x <= x <= rect1_x + square1_side and rect1_y <= y <= rect1_y + square1_side
+
+def point_in_circle2(x, y):
+    cx, cy, r = circle2_center_x, circle2_center_y, circle2_radius
+    return (x - cx)**2 + (y - cy)**2 < r**2
+
+def point_in_square2(x, y):
+    return rect2_x <= x <= rect2_x + square2_side and rect2_y <= y <= rect2_y + square2_side
+
+# 根據區域顏色來判定顏色
+def get_region_color(x, y):
+    # 圓1內且方形1內，顯示特殊顏色
+    if point_in_circle1(x, y) and point_in_square1(x, y):
+        return 'purple'
+    # 圓1內且方形1外，顯示另一種顏色
+    elif point_in_circle1(x, y) and not point_in_square1(x, y):
+        return 'green'
+    
+    # 圓2內且方形2內，顯示特殊顏色
+    elif point_in_circle2(x, y) and point_in_square2(x, y):
+        return 'orange'
+    # 圓2內且方形2外，顯示另一種顏色
+    elif point_in_circle2(x, y) and not point_in_square2(x, y):
+        return 'yellow'
+
+    # 繪製圓1內的區域顏色
+    elif point_in_circle1(x, y):
+        return 'blue'  # 圓1內，但不在方形1內
+
+    # 繪製圓2內的區域顏色
+    elif point_in_circle2(x, y):
+        return 'red'  # 圓2內，但不在方形2內
+    
+    else:
+        return None  # 其他區域不著色
+
+# 扫描每 10 像素的格點並上色
+def scan_and_draw():
+    for x in range(0, 600, grid_size):  # 遍歷畫布範圍，從左到右
+        for y in range(0, 600, grid_size):  # 從上到下
+            color = get_region_color(x, y)  # 獲取當前點的區域顏色
+            if color:  # 只有當顏色不為 None（即點在區域內）時才繪製
+                # 繪製點
+                ctx.fillStyle = color
+                ctx.beginPath()
+                ctx.arc(x, y, point_size, 0, 2 * math.pi)  # 點的半徑
+                ctx.fill()
+
+# 開始掃描並繪製顏色
+scan_and_draw()
 </script>
 </p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>

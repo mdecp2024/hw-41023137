@@ -161,6 +161,7 @@ netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allo
 <p>檢查頁面：<a href="https://nfuedu-my.sharepoint.com/:x:/g/personal/yen_nfu_edu_tw/EdI55F_F5ndJiRBfAKTYpZgB6bTLWOGyXcpS_X7Jzieoyw?e=R4pgmR&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIxNDE1LzI0MTAyMDAxMzE4In0%3D">https://nfuedu-my.sharepoint.com/:x:/g/personal/yen_nfu_edu_tw/EdI55F_F5ndJiRBfAKTYpZgB6bTLWOGyXcpS_X7Jzieoyw?e=R4pgmR&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIxNDE1LzI0MTAyMDAxMzE4In0%3D</a> </p>
 <p><strong><em>2.學習如何利用rect畫矩形，以及將矩形直接畫在頁面上</em></strong></p>
 <p>w13頁面：<a href="https://mdecp2024.github.io/hw-41023137/content/w13.html">https://mdecp2024.github.io/hw-41023137/content/w13.html</a></p>
+<p>w13_hw：<a href="https://mde.tw/cp2024/content/w13.html">https://mde.tw/cp2024/content/w13.html</a></p>
 <p>出席 (10%) - 自行舉證評分</p>
 <p>自行利用 Github commits 提交記錄評分.</p><h1>HW 1</h1>
 <h4>主題: 基於瀏覽器的分散式版次管理與整合程式開發環境 (10%)<span style="background-color: #ffff99;"><br/></span></h4>
@@ -341,7 +342,8 @@ draw_circle(10, 5, gs, (5, 5))
 <div id="brython_div1"></div>
 <!-- 導入 brython 程式庫 -->
 <p>
-<script src="/static/brython.js"></script>
+<script src="/static/brython.js">
+</script>
 <script src="/static/brython_stdlib.js"></script>
 </p>
 <!-- 啟動 Brython -->
@@ -375,6 +377,88 @@ ctx.strokeStyle = 'blue'  # 設定對角線顏色為藍色
 ctx.beginPath() 
 ctx.moveTo(10, 10)
 ctx.lineTo(210, 210)
+ctx.stroke()
+</script>
+</p>
+<p></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js">
+</script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+
+# 建立 canvas 並加入網頁
+canvas = html.CANVAS(width=800, height=800)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+# 取得 2D 繪圖上下文
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+
+# 定義第一個矩形的參數
+rect1_x = 100
+rect1_y = 100
+rect1_width = 200
+rect1_height = 200
+
+# 定義第二個矩形的參數
+rect2_x = 200
+rect2_y = 200
+rect2_width = 200
+rect2_height = 200
+
+# 繪製第一個矩形和外切圓
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.rect(rect1_x, rect1_y, rect1_width, rect1_height)
+ctx.stroke()
+
+ctx.strokeStyle = 'blue' 
+ctx.beginPath() 
+ctx.moveTo(100, 100)
+ctx.lineTo(300, 300)
+ctx.stroke()
+
+# 計算第一個矩形的外切圓參數
+rect1_centerX = rect1_x + rect1_width / 2
+rect1_centerY = rect1_y + rect1_height / 2
+rect1_radius = math.sqrt((rect1_width / 2) ** 2 + (rect1_height / 2) ** 2)
+
+# 繪製第一個矩形的外切圓
+ctx.beginPath()
+ctx.arc(rect1_centerX, rect1_centerY, rect1_radius, 0, math.pi * 2)
+ctx.strokeStyle = 'black'
+ctx.stroke()
+
+# 繪製第二個矩形和外切圓
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.rect(rect2_x, rect2_y, rect2_width, rect2_height)
+ctx.stroke()
+
+# 計算第二個矩形的外切圓參數
+rect2_centerX = rect2_x + rect2_width / 2
+rect2_centerY = rect2_y + rect2_height / 2
+rect2_radius = math.sqrt((rect2_width / 2) ** 2 + (rect2_height / 2) ** 2)
+
+# 繪製第二個矩形的外切圓
+ctx.beginPath()
+ctx.arc(rect2_centerX, rect2_centerY, rect2_radius, 0, math.pi * 2)
+ctx.strokeStyle = 'black'
 ctx.stroke()
 </script>
 </p><h1>HW 2</h1>
