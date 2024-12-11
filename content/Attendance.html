@@ -287,9 +287,72 @@ netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allo
 <p><strong><em>2.學習如何利用rect畫矩形，以及將矩形直接畫在頁面上</em></strong></p>
 <p>w13頁面：<a href="https://mdecp2024.github.io/hw-41023137/content/w13.html">https://mdecp2024.github.io/hw-41023137/content/w13.html</a></p>
 <p>w13_hw：<a href="https://mde.tw/cp2024/content/w13.html">https://mde.tw/cp2024/content/w13.html</a></p>
+<p><strong>w14:學習利用函式判斷圓形交疊位置</strong></p>
+<p>w14頁面：<a href="https://mdecp2024.github.io/hw-41023137/content/w14_ex.html">https://mdecp2024.github.io/hw-41023137/content/w14_ex.html</a></p>
+<p>w14_hw：<a href="https://mde.tw/cp2024/content/w14_ex.html">https://mde.tw/cp2024/content/w14_ex.html</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+ctx = canvas.getContext("2d")
+
+grid_size = 10
+ctx.lineWidth = 1
+
+def draw_circle(x, y, r, color):
+    ctx.beginPath()
+    ctx.arc(x, y, r, 0, 2 * math.pi)  # 圓心在(x, y)，半徑為r
+    ctx.fillStyle = color
+    ctx.fill()  # 填充顏色
+    ctx.stroke()
+
+def draw():
+    ctx.clearRect(0, 0, canvas.width, canvas.height)  # 清除畫布
+
+    # 圓心1和圓半徑
+    x1, y1, r1 = 200, 200, 141.4  # 圓心1 (200, 200)，半徑141.4
+    x2, y2, r2 = 300, 300, 141.4  # 圓心2 (300, 300)，半徑141.4
+
+    # 繪製兩個圓 (不同顏色填充)
+    circle1 = draw_circle(x1, y1, r1, 'lightblue')  # 第一個圓的區域填充藍色
+    circle2 = draw_circle(x2, y2, r2, 'lightgreen')  # 第二個圓的區域填充綠色
+
+    # 判斷圓是否重疊
+    dist = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)  # 計算兩圓圓心之間的距離
+    if dist &lt; r1 + r2:  # 如果兩圓重疊
+        # 計算交集區域的範圍
+        # 用顏色填充交集區域
+        ctx.beginPath()
+        # 假設這是一個簡化的交集區域繪製 (具體交集邊界會比較複雜)
+        ctx.arc((x1 + x2) / 2, (y1 + y2) / 2, min(r1, r2), 0, 2 * math.pi)
+        ctx.fillStyle = 'purple'  # 交集區域填充紫色
+        ctx.fill()
+        
+
+        
+
+    
+    # 可選：繪製圓邊框 (黑色)
+    ctx.strokeStyle = 'black'
+    ctx.lineWidth = 2
+    ctx.beginPath()
+    ctx.arc(x1, y1, r1, 0, 2 * math.pi)
+    ctx.stroke()
+
+    ctx.beginPath()
+    ctx.arc(x2, y2, r2, 0, 2 * math.pi)
+    ctx.stroke()
+
+# 繪製
+draw()
+</pre>
 <p>出席 (10%) - 自行舉證評分</p>
-<p>自行利用 Github commits 提交記錄評分.</p>
-<br />References << <a href='References.html'>Previous</a> <a href='HW 1.html'>Next</a> >> HW 1</div>
+<p>自行利用 Github commits 提交記錄評分.</p><br />References << <a href='References.html'>Previous</a> <a href='HW 1.html'>Next</a> >> HW 1</div>
         
     <!-- footer -->
       <div class="container">
