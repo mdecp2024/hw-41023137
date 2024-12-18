@@ -142,10 +142,11 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
-<p><a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/5544ce721b034a8ffc3ec3c82b42cd25/raw/dee3922c4b9117f3f02fbe55d73c50f3a74800f5/w15">從 1 累加到 100</a></p>
-<p><a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/25cf6d420217a56ff9c2eab9a24664db/raw/4e81ad5e19936dfa27c563451f320c060d03b92c/w15_2">addto</a></p>
-<p><a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/90ff660af3c4c2bd8a80a0e12304339f/raw/d2c6d2260a9725c095fedfb6bd6639b41489ed9b/w15_3">addto_only_even</a></p>
-<p><a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/8f9c14d08631ad2a1e9a1bb94131c83c/raw/8e0c78939b8a162b7128b4c16adc51a4fe017272/w15_4">addto_avoid_8</a></p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+<p>題目一：<a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/5544ce721b034a8ffc3ec3c82b42cd25/raw/dee3922c4b9117f3f02fbe55d73c50f3a74800f5/w15">從 1 累加到 100</a></p>
+<p>題目二：<a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/25cf6d420217a56ff9c2eab9a24664db/raw/4e81ad5e19936dfa27c563451f320c060d03b92c/w15_2">addto</a></p>
+<p>題目三：<a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/90ff660af3c4c2bd8a80a0e12304339f/raw/d2c6d2260a9725c095fedfb6bd6639b41489ed9b/w15_3">addto_only_even</a></p>
+<p>題目四：<a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/8f9c14d08631ad2a1e9a1bb94131c83c/raw/8e0c78939b8a162b7128b4c16adc51a4fe017272/w15_4">addto_avoid_8</a></p>
+<p>心得：第一個題目讓我學習了最基本的for迴圈計算數列，並且預先在迴圈設置了變數，以方便修改數值，最後的print裡面使用了+將多個字串連接，以及使用了str將變數的數值轉換成字串，用以和其他字串連接。第二個題目是設置一個函式將第一個題目的程式加入進去，由於函式可以在後面引用時才輸入值，所以不用預先設置輸入值變數，還有函式內要引用函式外的變數時，需要在前方加上一個global表示要引用全域變數。第三個題目一樣是要從1加到100，但只計算其中偶數的累加值，這裡我學習到if i % 2 == 0: 可以檢查i除以2之後的餘數是否為0，sum_even += i則是可以計算將前面的偶數累加放到<span>sum_even這個變數中，後面的return將sum_even這個變數回傳，讓我們在後面呼叫這個函式時，能夠print出sum_even的值，如果沒有return的話，函式外面沒辦法取得sum_even的值。第四個一樣是要從1加到100，但要排除其中出現8的數字，利用 <span class="hljs-keyword">if</span> <span class="hljs-string">'8'</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">str</span>(i): <span class="hljs-comment">檢查數字是否包含 8</span> ，然後一樣使用sum_avoid_8 += i 將其累加進sum_avoid_8這個變數中。</span></p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
