@@ -230,6 +230,8 @@ draw()
 <p>note:要讓函式引用外面的全域變數要在變數名稱前面加上global</p>
 <p>w15頁面：<a href="https://mdecp2024.github.io/hw-41023137/content/w15.html">https://mdecp2024.github.io/hw-41023137/content/w15.html</a></p>
 <p>w15_hw：<a href="https://mde.tw/cp2024/content/w15.html">https://mde.tw/cp2024/content/w15.html</a></p>
+<p><strong>w16:隋堂測試 Exam2</strong></p>
+<p>Ex:<a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/760bae7f4b0284b919917df5c9471b0b/raw/99ca0d102cf15f1cedff4c8e7a928520caa2da90/w16_exam2%2520Zoom">w16_exam2_Zoom</a></p>
 <p>出席 (10%) - 自行舉證評分</p>
 <p>自行利用 Github commits 提交記錄評分.</p><h1>HW 1</h1>
 <h4>主題: 基於瀏覽器的分散式版次管理與整合程式開發環境 (10%)<span style="background-color: #ffff99;"><br/></span></h4>
@@ -974,7 +976,121 @@ ctx.stroke()
 <h2>HW 4 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>Final Report</h1>
+<h3>w16_exam3</h3>
+<div id="brython_div1"><a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/66fd507edda6932874797c85727b0aad/raw/f13f99535c0544fd308d43bb15bd978adbc169ae/w16_exam3">w16_exam3</a></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js">
+</script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=300, height=300)  # 設定迷宮畫布大小
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+# 取得 canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 標示左上方點座標 (31, 37)
+ctx.font = "12px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(31, 37)", 35, 50)
+
+# 定義黑色線條的屬性
+ctx.strokeStyle = "black"
+ctx.lineWidth = 2
+
+# 開始繪製迷宮 (座標偏移以 (31, 37) 為起點)
+offset_x = 31
+offset_y = 37
+
+# 繪製迷宮線條
+ctx.beginPath()
+ctx.moveTo(offset_x + 0, offset_y + 0) 
+ctx.lineTo(offset_x + 86, offset_y + 0)
+ctx.moveTo(offset_x + 0, offset_y + 0)
+ctx.lineTo(offset_x + 0, offset_y + 200)
+ctx.moveTo(offset_x + 120, offset_y + 0)
+ctx.lineTo(offset_x + 200, offset_y + 0)
+ctx.moveTo(offset_x + 200, offset_y + 0)
+ctx.lineTo(offset_x + 200, offset_y + 200)
+ctx.lineTo(offset_x + 120, offset_y + 200)
+ctx.moveTo(offset_x + 200, offset_y + 200)
+ctx.moveTo(offset_x + 0, offset_y + 200) 
+ctx.lineTo(offset_x + 86, offset_y + 200)
+ctx.moveTo(offset_x + 86, offset_y + 157) 
+ctx.lineTo(offset_x + 86, offset_y + 200)
+ctx.moveTo(offset_x + 86, offset_y + 157) 
+ctx.lineTo(offset_x + 126, offset_y + 157)
+ctx.moveTo(offset_x + 160, offset_y + 120) 
+ctx.lineTo(offset_x + 160, offset_y + 200)
+ctx.moveTo(offset_x + 160, offset_y + 120) 
+ctx.lineTo(offset_x + 50, offset_y + 120)
+ctx.moveTo(offset_x + 50, offset_y + 120) 
+ctx.lineTo(offset_x + 50, offset_y + 163)
+ctx.moveTo(offset_x + 126, offset_y + 80) 
+ctx.lineTo(offset_x + 126, offset_y + 120)
+ctx.moveTo(offset_x + 0, offset_y + 80) 
+ctx.lineTo(offset_x + 86, offset_y + 80)
+ctx.moveTo(offset_x + 86, offset_y + 40) 
+ctx.lineTo(offset_x + 86, offset_y + 80)
+ctx.moveTo(offset_x + 40, offset_y + 40) 
+ctx.lineTo(offset_x + 160, offset_y + 40)
+ctx.moveTo(offset_x + 160, offset_y + 40) 
+ctx.lineTo(offset_x + 160, offset_y + 83)
+ctx.stroke()
+
+# 定義紅色線條的屬性
+ctx.strokeStyle = "red"
+ctx.lineWidth = 2
+
+# 繪製路徑線條
+ctx.beginPath()
+ctx.moveTo(offset_x + 100, offset_y + 0) 
+ctx.lineTo(offset_x + 100, offset_y + 20)
+ctx.moveTo(offset_x + 100, offset_y + 20) 
+ctx.lineTo(offset_x + 180, offset_y + 20)
+ctx.moveTo(offset_x + 180, offset_y + 20) 
+ctx.lineTo(offset_x + 180, offset_y + 100)
+ctx.moveTo(offset_x + 180, offset_y + 100) 
+ctx.lineTo(offset_x + 140, offset_y + 100)
+ctx.moveTo(offset_x + 140, offset_y + 100) 
+ctx.lineTo(offset_x + 140, offset_y + 60)
+ctx.moveTo(offset_x + 140, offset_y + 60) 
+ctx.lineTo(offset_x + 110, offset_y + 60)
+ctx.moveTo(offset_x + 110, offset_y + 60) 
+ctx.lineTo(offset_x + 110, offset_y + 100)
+ctx.moveTo(offset_x + 110, offset_y + 100) 
+ctx.lineTo(offset_x + 30, offset_y + 100)
+ctx.moveTo(offset_x + 30, offset_y + 100) 
+ctx.lineTo(offset_x + 30, offset_y + 180)
+ctx.moveTo(offset_x + 30, offset_y + 180) 
+ctx.lineTo(offset_x + 70, offset_y + 180)
+ctx.moveTo(offset_x + 70, offset_y + 180) 
+ctx.lineTo(offset_x + 70, offset_y + 140)
+ctx.moveTo(offset_x + 70, offset_y + 140) 
+ctx.lineTo(offset_x + 140, offset_y + 140)
+ctx.moveTo(offset_x + 140, offset_y + 140) 
+ctx.lineTo(offset_x + 140, offset_y + 180)
+ctx.moveTo(offset_x + 140, offset_y + 180) 
+ctx.lineTo(offset_x + 110, offset_y + 180)
+ctx.moveTo(offset_x + 110, offset_y + 180) 
+ctx.lineTo(offset_x + 110, offset_y + 200)
+ctx.stroke()
+</script>
+</p><h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
 <p style="padding-left: 30px;">......</p>
