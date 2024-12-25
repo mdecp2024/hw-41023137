@@ -780,6 +780,7 @@ draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam1</h3>
 <div id="brython_div1"><a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/0b9b7c26aca1d3c6b5801102fbd925c5/raw/a160f95449ccbecd9f112bb2ba5cf1d511502c89/w16_exam1">w16_exam1</a></div>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/5KX7xP52rMY?si=vBINdvOibgbQMFzL" title="YouTube video player" width="560"></iframe></p>
 <!-- 導入 brython 程式庫 -->
 <p>
 <script src="/static/brython.js">
@@ -884,7 +885,83 @@ ctx.fill()
 <h2>HW 3 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>HW 4</h1>
+<h3>w16_exam2</h3>
+<div id="brython_div1"><a href="https://mdecp2024.github.io/hw-41023137/content/Brython.html?src=https://gist.githubusercontent.com/41023137/fcbc04fec2172506efe1f70ca8207d70/raw/46dc33213f95ef18cc327394b5afbd16085cff4a/w16_exam2">w16_exam2</a></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js">
+</script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=300, height=300)  # 設定迷宮畫布大小
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+# 取得 canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 標示左上方點座標 (31, 37)
+ctx.font = "12px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(31, 37)", 35, 50)
+
+# 定義藍色線條的屬性
+ctx.strokeStyle = "blue"
+ctx.lineWidth = 2
+
+# 開始繪製迷宮 (座標偏移以 (31, 37) 為起點)
+offset_x = 31
+offset_y = 37
+
+# 繪製迷宮線條
+ctx.beginPath()
+ctx.moveTo(offset_x + 0, offset_y + 0) 
+ctx.lineTo(offset_x + 86, offset_y + 0)
+ctx.moveTo(offset_x + 0, offset_y + 0)
+ctx.lineTo(offset_x + 0, offset_y + 200)
+ctx.moveTo(offset_x + 120, offset_y + 0)
+ctx.lineTo(offset_x + 200, offset_y + 0)
+ctx.moveTo(offset_x + 200, offset_y + 0)
+ctx.lineTo(offset_x + 200, offset_y + 200)
+ctx.lineTo(offset_x + 120, offset_y + 200)
+ctx.moveTo(offset_x + 200, offset_y + 200)
+ctx.moveTo(offset_x + 0, offset_y + 200) 
+ctx.lineTo(offset_x + 86, offset_y + 200)
+ctx.moveTo(offset_x + 86, offset_y + 157) 
+ctx.lineTo(offset_x + 86, offset_y + 200)
+ctx.moveTo(offset_x + 86, offset_y + 157) 
+ctx.lineTo(offset_x + 126, offset_y + 157)
+ctx.moveTo(offset_x + 160, offset_y + 120) 
+ctx.lineTo(offset_x + 160, offset_y + 200)
+ctx.moveTo(offset_x + 160, offset_y + 120) 
+ctx.lineTo(offset_x + 50, offset_y + 120)
+ctx.moveTo(offset_x + 50, offset_y + 120) 
+ctx.lineTo(offset_x + 50, offset_y + 163)
+ctx.moveTo(offset_x + 126, offset_y + 80) 
+ctx.lineTo(offset_x + 126, offset_y + 120)
+ctx.moveTo(offset_x + 0, offset_y + 80) 
+ctx.lineTo(offset_x + 86, offset_y + 80)
+ctx.moveTo(offset_x + 86, offset_y + 40) 
+ctx.lineTo(offset_x + 86, offset_y + 80)
+ctx.moveTo(offset_x + 40, offset_y + 40) 
+ctx.lineTo(offset_x + 160, offset_y + 40)
+ctx.moveTo(offset_x + 160, offset_y + 40) 
+ctx.lineTo(offset_x + 160, offset_y + 83)
+ctx.stroke()
+</script>
+</p><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
